@@ -1,8 +1,4 @@
-import React from 'react';
-import './App.css';
-import Home from './Home/Home';
-import Header from './Header/Header';
-import Subreddits from './Subreddits/Subreddits';
+import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,26 +8,13 @@ import {
 
 import { Navbar } from './components/Navbar'
 
-/*function App() {
-  return (
-    <>
-      <Header />
-      <main>
-        <Home />
-      </main>
-      <aside>
-        <Subreddits />
-      </aside>
-    </>
-  );
-}
-*/
+import { PostsList } from './components/PostsList'
+import { SinglePostPage } from './components/SinglePostPage'
 
 function App() {
   return (
     <Router>
-      <Header />
-      <Subreddits />
+      <Navbar />
       <div className="App">
         <Switch>
           <Route
@@ -39,10 +22,11 @@ function App() {
             path="/"
             render={() => (
               <React.Fragment>
-                <Home />
+                <PostsList />
               </React.Fragment>
             )}
           />
+          <Route exact path="/posts/:postId" component={SinglePostPage} />
           <Redirect to="/" />
         </Switch>
       </div>
@@ -50,4 +34,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
