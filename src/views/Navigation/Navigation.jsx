@@ -1,15 +1,16 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { selectSubreddits } from '../../stores/posts/subRedditSlice';
-import './Navigation.css';
+import { useDispatch, useSelector } from 'react-redux'
+import { selectSubreddits } from '../../stores/posts/subRedditSlice'
+import './Navigation.css'
+import { Link } from 'react-router-dom'
 import {
   setSelectedSubreddit,
   selectSelectedSubreddit,
-} from '../../stores/posts/redditSlice';
+} from '../../stores/posts/redditSlice'
 
 const Navigation = () => {
-  const dispatch = useDispatch();
-  const subreddits = useSelector(selectSubreddits);
-  const selectedSubreddit = useSelector(selectSelectedSubreddit);
+  const dispatch = useDispatch()
+  const subreddits = useSelector(selectSubreddits)
+  const selectedSubreddit = useSelector(selectSelectedSubreddit)
 
   return (
     <section className="subreddit-card">
@@ -21,17 +22,19 @@ const Navigation = () => {
               selectedSubreddit === subreddit.url && `selected-subreddit`
             }`}
           >
-            <button
-              type="button"
-              onClick={() => dispatch(setSelectedSubreddit(subreddit.url))}
-            >
-              {subreddit.url}
-            </button>
+            <Link to={subreddit.url}>
+              <button
+                type="button"
+                onClick={() => dispatch(setSelectedSubreddit(subreddit.url))}
+              >
+                {subreddit.url}
+              </button>
+            </Link>
           </li>
         ))}
       </ul>
     </section>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation

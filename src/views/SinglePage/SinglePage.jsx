@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Teaser from '../Teaser/Teaser'
+import Post from './Post';
 import {
   fetchPosts,
   selectFilteredPosts,
   setSearchTerm,
   fetchComments,
 } from '../../stores/posts/redditSlice';
-import './Home.css';
+import './SinglePage.css';
 
-const Home = () => {
+const SinglePage = () => {
   const reddit = useSelector((state) => state.reddit);
   const { isLoading, error, searchTerm, selectedSubreddit } = reddit;
   const posts = useSelector(selectFilteredPosts);
@@ -62,7 +62,7 @@ const Home = () => {
       <>
         <div className="mondrianFlex">
           {posts.map((post, index) => (
-            <Teaser
+            <Post
               key={post.id}
               post={post}
               index={index}
@@ -74,4 +74,4 @@ const Home = () => {
     )
 };
 
-export default Home;
+export default SinglePage;

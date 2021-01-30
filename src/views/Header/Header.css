@@ -4,13 +4,13 @@ header {
   width: 100%;
   align-items: center;
   background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 20px;
 }
 
-header .logo{
+header .logo {
   display: flex;
   flex: 1;
 }
@@ -27,7 +27,6 @@ header .logo-title {
   align-items: center;
 }
 
-
 header ul {
   display: flex;
   justify-content: space-around;
@@ -41,7 +40,7 @@ header li {
 
 header span {
   color: #0339a6;
-   font-weight: 600;
+  font-weight: 600;
 }
 
 .search {
@@ -49,7 +48,6 @@ header span {
   align-items: center;
   width: 60vw;
   margin-bottom: 1rem;
-  
 }
 
 .search input {

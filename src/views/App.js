@@ -21,7 +21,16 @@ function App() {
             path="/"
             render={() => (
               <React.Fragment>
-                  <Home />
+                <Home />
+              </React.Fragment>
+            )}
+          />
+          <Route
+            exact
+            path="/r/:subreddit"
+            render={() => (
+              <React.Fragment>
+                <Home />
               </React.Fragment>
             )}
           />
@@ -32,5 +41,7 @@ function App() {
     </Router>
   )
 }
+
+//  <Route exact path="/posts/:postId" component={SinglePostPage} />
 
 export default App;

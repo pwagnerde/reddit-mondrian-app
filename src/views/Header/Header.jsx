@@ -4,15 +4,12 @@ import Navigation from '../Navigation/Navigation'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   setSearchTerm,
-  selectSelectedSubreddit,
 } from '../../stores/posts/redditSlice'
 
 const Header = () => {
   const [searchTermLocal, setSearchTermLocal] = useState('')
   const searchTerm = useSelector((state) => state.reddit.searchTerm)
   const dispatch = useDispatch()
-
-    const selectedSubreddit = useSelector(selectSelectedSubreddit)
 
   const onSearchTermChange = (e) => {
     setSearchTermLocal(e.target.value)
@@ -30,8 +27,8 @@ const Header = () => {
   return (
     <React.Fragment>
       <header>
-        <div className="logo">
-          <img className="logo-icon" src="./logo.jpg" alt="logo" />
+        <div className="logo"> 
+            <img className="logo-icon" src="./logo.jpg" alt="logo" />
           <div className="logo-title">
             Reddit<span>Mondrian</span>
           </div>

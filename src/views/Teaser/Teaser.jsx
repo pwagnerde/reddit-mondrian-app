@@ -13,7 +13,11 @@ const Teaser = (props) => {
         <div className="post-container">
           <div className="post-header">
             <h3 className="post-title">{post.title}</h3>
-            <span className="post-author">by {post.author}</span>
+            <span className="post-author">
+              <a href={post.url} target="_blank" rel="noreferrer">
+                by {post.author}
+              </a>
+            </span>
           </div>
           <img src={post.url} alt="" className="post-image" />
         </div>
