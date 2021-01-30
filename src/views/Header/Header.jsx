@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import './Header.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { setSearchTerm } from '../../stores/posts/redditSlice'
+import {
+  setSearchTerm,
+  selectSelectedSubreddit,
+} from '../../stores/posts/redditSlice'
 
 const Header = () => {
   const [searchTermLocal, setSearchTermLocal] = useState('')
   const searchTerm = useSelector((state) => state.reddit.searchTerm)
   const dispatch = useDispatch()
+
+    const selectedSubreddit = useSelector(selectSelectedSubreddit)
 
   const onSearchTermChange = (e) => {
     setSearchTermLocal(e.target.value)
@@ -24,9 +29,10 @@ const Header = () => {
   return (
     <header>
       <div className="logo">
-        <img className="logo-icon" src='./logo.jpg' alt="logo" />
+        <img className="logo-icon" src="./logo.jpg" alt="logo" />
         <p>
           Reddit<span>Mondrian</span>
+          {selectedSubreddit}
         </p>
       </div>
       <form className="search" onSubmit={onSearchTermSubmit}>
