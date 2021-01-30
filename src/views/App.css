@@ -10,6 +10,7 @@
   --color-text-link: #4ec3f5;
   --color-branding: #3d5af1;
   --color-branding-transparent: #3d5af140;
+  --redux-color: #764abc;
 
   --spacing-0: 4px;
   --spacing-1: 8px;
@@ -21,3 +22,5 @@
   --radius: 4px;
   --radius-2: 8px;
 }
+
+

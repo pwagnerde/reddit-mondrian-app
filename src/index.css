@@ -26,3 +26,7 @@ a {
   grid-template-columns: 1fr;
   grid-gap: 1rem;
 }
+
+*:focus {
+    outline: none;
+}

@@ -29,7 +29,7 @@ const Home = () => {
 
   if (isLoading) {
     return (
-      <p>Loading...</p>
+      <div className="loader">Loading...</div>
     );
   }
 
