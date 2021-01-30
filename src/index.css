@@ -30,3 +30,48 @@ a {
 *:focus {
     outline: none;
 }
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
+
+}
+h3 {
+  font-size: 1rem;
+}
+
+h4 {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 960px) {
+  /* Tablet styles go here */
+ body{
+   font-size: 14px;
+ }
+
+}
+
+@media screen and (max-width: 800px) {
+ body{
+   font-size: 12px;
+ }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  h1 {
+  font-size: 2.5rem;
+  }
+
+   h2 {
+  font-size: 2rem;
+  text-align: center;
+  }
+
+}
