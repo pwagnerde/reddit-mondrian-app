@@ -1,68 +1,87 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# The Reddit Mondrian App
 
-## Available Scripts
+> The Reddit Mondrian App connects to the Reddit API to provide hot posts for design, data & technology topics.
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+* [General info](#general-info)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Status](#status)
+* [Inspiration](#inspiration)
+* [Contact](#contact)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## General info
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The purpose of this project is to help me to better understand React, Redux, Jest, Enzyme, the Reddit API and to inspire people with valuable content.
 
-### `npm test`
+## Screenshots
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Example screenshot](./img/screenshot.png)
 
-### `npm run build`
+## Technologies
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* JavaScript - version ES6
+* React - version 17.0.1
+* React-Redux - version 7.2.2
+* Redux Toolkit - 1.5.0
+* Jest - version 26.2
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Please use npm install & npm start to run the application in your local environmnet.
 
-### `npm run eject`
+## Code Examples
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Examples of API building blocks:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```javascript
+import { API_URL } from '../../constants/base'
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+export const getSubredditPosts = async (subreddit) => {
+  const response = await fetch(`${API_URL}${subreddit}.json?limit=60`)
+  const json = await response.json()
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  return json.data.children.map((post) => post.data)
+}
 
-## Learn More
+export const getPostComments = async (permalink) => {
+  const response = await fetch(`${API_URL}${permalink}.json`)
+  const json = await response.json()
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  return json[1].data.children.map((subreddit) => subreddit.data)
+}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
+## Features
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+List of features ready and TODOs for future development
 
-### Analyzing the Bundle Size
+* Users can use the application on any device (desktop to mobile)
+* Users can use the application on any modern browser
+* Users see an initial view of the data when first visiting the app
+* Users can search the data using terms
+* Users can filter the data based on categories that are predefined
+* Users are delighted with a cohesive design system
+* Users are able to leave an error state
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+To-do list:
 
-### Making a Progressive Web App
+* Users can access the application at a URL
+* Users are shown a detail view (modal or new page/route) when they select an item
+* Users are delighted with animations and transitions
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Status
 
-### Advanced Configuration
+Project is: _wip_
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Inspiration
 
-### Deployment
+Thanks to REDDIT for providing this great API.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Contact
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Created by [@pwagnerde](https://www.linkedin.com/in/pwagnerde/) - feel free to contact me!
