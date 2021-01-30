@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Header.css'
+import Navigation from '../Navigation/Navigation'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   setSearchTerm,
@@ -27,27 +28,33 @@ const Header = () => {
   }
 
   return (
-    <header>
-      <div className="logo">
-        <img className="logo-icon" src="./logo.jpg" alt="logo" />
-        <p>
-          Reddit<span>Mondrian</span>
-          {selectedSubreddit}
-        </p>
-      </div>
-      <form className="search" onSubmit={onSearchTermSubmit}>
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchTermLocal}
-          onChange={onSearchTermChange}
-          aria-label="Search posts"
-        />
-        <button type="submit" onClick={onSearchTermSubmit} aria-label="Search">
-          Go
-        </button>
-      </form>
-    </header>
+    <React.Fragment>
+      <header>
+        <div className="logo">
+          <img className="logo-icon" src="./logo.jpg" alt="logo" />
+          <div className="logo-title">
+            Reddit<span>Mondrian</span>
+          </div>
+        </div>
+        <Navigation />
+        <form className="search" onSubmit={onSearchTermSubmit}>
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchTermLocal}
+            onChange={onSearchTermChange}
+            aria-label="Search posts"
+          />
+          <button
+            type="submit"
+            onClick={onSearchTermSubmit}
+            aria-label="Search"
+          >
+            <img src="./search.svg" alt="Go" />
+          </button>
+        </form>
+      </header>
+    </React.Fragment>
   )
 }
 

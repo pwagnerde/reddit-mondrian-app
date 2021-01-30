@@ -3,16 +3,15 @@
   border: none;
   display: flex;
   align-items: center;
-  color: var(--color-text-body);
-  font-weight: 600;
+  color: white;
+
   cursor: pointer;
   width: 100%;
-  padding: var(--spacing-2);
-  border-radius: var(--radius);
 }
 
 .selected-subreddit button {
-  color: var(--color-branding) !important;
+  color: #0339a6 !important;
+   font-weight: 600;
 }
 
 .selected-subreddit {
@@ -27,6 +26,6 @@
   list-style: none;
   padding: 0;
   display: flex;
- justify-content: space-around;
+ justify-content: space-evenly;
 }
 

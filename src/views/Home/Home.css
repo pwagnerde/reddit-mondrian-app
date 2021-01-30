@@ -1,16 +1,32 @@
-.error {
+
+.mondrianFlex {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
+  align-content: center;
+  margin-top: 200px;
+  max-width: 100%;
+  min-height: 300rem; 
+  max-height: 1500rem;
 }
 
-.error button {
-  color: var(--color-text-invert);
-  background: var(--color-branding);
-  border: none;
-  border-radius: var(--radius);
-  font-size: 1rem;
-  padding: var(--spacing-2) var(--spacing-4);
-  cursor: pointer;
+
+@media (min-width: 1000px) {
+  .mondrianFlex {
+    max-height: 800rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mondrianFlex {
+    max-height: 700rem;
+  }
+}
+
+
+@media (min-width: 1500px) {
+  .mondrianFlex {
+  max-height: 600rem;
+  }
 }

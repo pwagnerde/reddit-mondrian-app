@@ -1,0 +1,34 @@
+
+.post-container{
+  border: 2px solid black;
+  border-radius: 1rem;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  width: 50vh;
+  max-height: 600px;
+ 
+
+}
+
+.post-title {
+  width: 100%;
+  padding: 1em 0.5em 1em 1em;
+  background-color: #e5e5e5
+
+}
+
+.post-header {
+  margin-bottom: 1rem;
+   
+}
+.post-image {
+  width: 100%;
+}
+
+
+.post-author {
+  width: 100%;
+  padding: 0 0.5em 1em 1em;
+}

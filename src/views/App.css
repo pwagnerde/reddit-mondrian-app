@@ -30,13 +30,3 @@
   --radius: 4px;
   --radius-2: 8px;
 }
-
-html,
-body {
-  background: var(--color-background);
-  color: var(--color-text-body);
-}
-
-p {
-  margin: 0;
-}

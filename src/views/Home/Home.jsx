@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Post from '../Post/Post';
+import Teaser from '../Teaser/Teaser'
 import {
   fetchPosts,
   selectFilteredPosts,
@@ -58,7 +59,7 @@ const Home = () => {
     );
   }
 
-  return (
+/*  return (
     <>
       {posts.map((post, index) => (  
         <Post
@@ -69,6 +70,22 @@ const Home = () => {
       ))}
     </>
   );
+*/
+
+    return (
+      <>
+        <div className="mondrianFlex">
+          {posts.map((post, index) => (
+            <Teaser
+              key={post.id}
+              post={post}
+              index={index}
+              onToggleComments={onToggleComments(index)}
+            />
+          ))}
+        </div>
+      </>
+    )
 };
 
 export default Home;

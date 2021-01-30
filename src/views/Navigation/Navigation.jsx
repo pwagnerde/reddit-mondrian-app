@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectSubreddits } from '../../stores/posts/subRedditSlice';
-import './Subreddits.css';
+import './Navigation.css';
 import {
   setSelectedSubreddit,
   selectSelectedSubreddit,
 } from '../../stores/posts/redditSlice';
 
-const Subreddits = () => {
+const Navigation = () => {
   const dispatch = useDispatch();
   const subreddits = useSelector(selectSubreddits);
   const selectedSubreddit = useSelector(selectSelectedSubreddit);
@@ -25,7 +25,7 @@ const Subreddits = () => {
               type="button"
               onClick={() => dispatch(setSelectedSubreddit(subreddit.url))}
             >
-              {subreddit.title} [{subreddit.url}]
+              {subreddit.url}
             </button>
           </li>
         ))}
@@ -34,4 +34,4 @@ const Subreddits = () => {
   );
 };
 
-export default Subreddits;
+export default Navigation;
