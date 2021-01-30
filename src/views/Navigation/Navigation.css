@@ -10,7 +10,7 @@
 
 .selected-subreddit button {
   color: rgb(201, 27, 201) !important;
-   font-weight: 600;
+  font-weight: 600;
 }
 
 .selected-subreddit {
@@ -25,6 +25,5 @@
   list-style: none;
   padding: 0;
   display: flex;
- justify-content: space-evenly;
+  justify-content: space-evenly;
 }
-

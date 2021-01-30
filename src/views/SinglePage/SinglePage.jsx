@@ -1,36 +1,34 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Post from './Post';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import Post from './Post'
 import {
   fetchPosts,
   selectFilteredPosts,
   setSearchTerm,
   fetchComments,
-} from '../../stores/posts/redditSlice';
-import './SinglePage.css';
+} from '../../stores/posts/redditSlice'
+import './SinglePage.css'
 
 const SinglePage = () => {
-  const reddit = useSelector((state) => state.reddit);
-  const { isLoading, error, searchTerm, selectedSubreddit } = reddit;
-  const posts = useSelector(selectFilteredPosts);
-  const dispatch = useDispatch();
+  const reddit = useSelector((state) => state.reddit)
+  const { isLoading, error, searchTerm, selectedSubreddit } = reddit
+  const posts = useSelector(selectFilteredPosts)
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(fetchPosts(selectedSubreddit));
-  }, [selectedSubreddit]);
+    dispatch(fetchPosts(selectedSubreddit))
+  }, [selectedSubreddit])
 
   const onToggleComments = (index) => {
     const getComments = (permalink) => {
-      dispatch(fetchComments(index, permalink));
-    };
+      dispatch(fetchComments(index, permalink))
+    }
 
-    return getComments;
-  };
+    return getComments
+  }
 
   if (isLoading) {
-    return (
-      <p>Loading...</p>
-    );
+    return <p>Loading...</p>
   }
 
   if (error) {
@@ -44,7 +42,7 @@ const SinglePage = () => {
           Try again
         </button>
       </div>
-    );
+    )
   }
 
   if (posts.length === 0) {
@@ -55,23 +53,21 @@ const SinglePage = () => {
           Go home
         </button>
       </div>
-    );
+    )
   }
 
-    return (
-      <>
-        <div className="mondrianFlex">
-          {posts.map((post, index) => (
-            <Post
-              key={post.id}
-              post={post}
-              index={index}
-              onToggleComments={onToggleComments(index)}
-            />
-          ))}
-        </div>
-      </>
-    )
-};
+  return (
+    <>
+        {posts.map((post, index) => (
+          <Post
+            key={post.id}
+            post={post}
+            index={index}
+            onToggleComments={onToggleComments(index)}
+          />
+        ))}
+    </>
+  )
+}
 
-export default SinglePage;
+export default SinglePage

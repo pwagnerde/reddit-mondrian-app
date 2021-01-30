@@ -1,5 +1,4 @@
-
-.post-container{
+.post-container {
   border: 2px solid black;
   border-radius: 1rem;
   margin-left: 1em;
@@ -8,8 +7,6 @@
   overflow: hidden;
   width: 50vh;
   max-height: 600px;
- 
-
 }
 
 .post-title {
@@ -17,17 +14,14 @@
   padding: 1em 0.5em 1em 1em;
   background-color: #e5e5e5;
   margin-top: 0;
-
 }
 
 .post-header {
   margin-bottom: 1rem;
-   
 }
 .post-image {
   width: 100%;
 }
-
 
 .post-author {
   width: 100%;

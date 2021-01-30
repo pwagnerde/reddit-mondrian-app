@@ -1,9 +1,9 @@
-import React from 'react';
-import './Comment.css';
+import React from 'react'
+import './Comment.css'
 import moment from 'moment'
 
 const Comment = (props) => {
-  const { comment } = props;
+  const { comment } = props
   return (
     <div className="comment">
       <div className="comment-metadata">
@@ -15,6 +15,6 @@ const Comment = (props) => {
       <div>{comment.body}</div>
     </div>
   )
-};
+}
 
-export default Comment;
+export default Comment

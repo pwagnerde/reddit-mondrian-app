@@ -18,3 +18,7 @@ footer .location {
   margin: 5px 0px 5px 0px;
   color: white;
 }
+
+footer a{
+    color: rgb(201, 27, 201);
+}

@@ -1,12 +1,11 @@
-import React from 'react';
-import './Post.css';
-import moment from 'moment';
-import shortenNumber from '../../utils/shortenNumber';
-import Comment from '../Comment/Comment';
+import React from 'react'
+import './Post.css'
+import moment from 'moment'
+import shortenNumber from '../../utils/shortenNumber'
+import Comment from '../Comment/Comment'
 
 const Post = (props) => {
-
-  const { post, onToggleComments } = props;
+  const { post, onToggleComments } = props
 
   const renderComments = () => {
     if (post.errorComments) {
@@ -14,7 +13,7 @@ const Post = (props) => {
         <div>
           <h3>Error loading comments</h3>
         </div>
-      );
+      )
     }
 
     if (post.loadingComments) {
@@ -22,7 +21,7 @@ const Post = (props) => {
         <div>
           <p>Loading...</p>
         </div>
-      );
+      )
     }
 
     if (post.showingComments) {
@@ -32,11 +31,11 @@ const Post = (props) => {
             <Comment comment={comment} key={comment.id} />
           ))}
         </div>
-      );
+      )
     }
 
-    return null;
-  };
+    return null
+  }
 
   return (
     <article key={post.id}>
@@ -76,6 +75,6 @@ const Post = (props) => {
       </section>
     </article>
   )
-};
+}
 
-export default Post;
+export default Post

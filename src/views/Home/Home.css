@@ -1,4 +1,3 @@
-
 .mondrianFlex {
   display: flex;
   flex-direction: column;
@@ -7,10 +6,9 @@
   align-content: center;
   margin-top: 200px;
   max-width: 100%;
-  min-height: 300rem; 
+  min-height: 300rem;
   max-height: 1500rem;
 }
-
 
 @media (min-width: 1000px) {
   .mondrianFlex {
@@ -24,9 +22,8 @@
   }
 }
 
-
 @media (min-width: 1500px) {
   .mondrianFlex {
-  max-height: 600rem;
+    max-height: 600rem;
   }
 }

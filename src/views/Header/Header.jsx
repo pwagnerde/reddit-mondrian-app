@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Header.css'
 import Navigation from '../Navigation/Navigation'
 import { useDispatch, useSelector } from 'react-redux'
-import {
-  setSearchTerm,
-} from '../../stores/posts/redditSlice'
+import { setSearchTerm } from '../../stores/posts/redditSlice'
 
 const Header = () => {
   const [searchTermLocal, setSearchTermLocal] = useState('')
@@ -27,8 +25,8 @@ const Header = () => {
   return (
     <React.Fragment>
       <header>
-        <div className="logo"> 
-            <img className="logo-icon" src="./logo.jpg" alt="logo" />
+        <div className="logo">
+          <img className="logo-icon" src="./logo.jpg" alt="logo" />
           <div className="logo-title">
             Reddit<span>Mondrian</span>
           </div>
